@@ -50,6 +50,7 @@ body {
     background-color: white;
     border-radius: 30px;
     padding: 20px;
+    height: 100%;
     
 }
 .tsagaan-sh-p{background-color: white;
@@ -250,6 +251,14 @@ body {
     .section .col-lg-4:last-child{
         margin-right: 0px;
     }
+ 
+    .invoicing:last-child{
+        margin-right: 0;
+    }
+    .invoicing:first-child{
+        margin-left: 0;
+    }
+    
     
         
         
