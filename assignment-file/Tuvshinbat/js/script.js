@@ -37,3 +37,20 @@
 
 // Add CLICK Event Listener on the button
 // Then using Fetch method POST input value to http://52.221.191.153/subscribe/subscription/create 
+let xhr = new XMLHttpRequest();
+xhr.onload = function(){
+console.log(this.responseText)
+
+let data = JSON.parse(xhr.responseText);
+let file =data.data;
+console.log(data)
+document.getElementById('company-1').innerHTML +=`<img class="img1 rounded15" src="./images/post1.png" alt="post1" width="100%" />`;
+document.getElementById("company-1").innerHTML +=` <h3>${file.title}</h3> `  ;
+
+document.getElementById('company-1').innerHTML += `<p>${file.content} </p> `;
+document.getElementById('company-1').innerHTML +=`<a class="decoration shargal" href="Learn more">Learn more &#8594;</a>`
+
+}
+
+xhr.open("GET", "./data/company_intro_1.json" )
+xhr.send();
