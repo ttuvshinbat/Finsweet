@@ -1,0 +1,91 @@
+body{
+    font-family: 'Poppins', sans-serif;
+    font-size: 1rem;}
+
+#first-name,#last-name,#email, #textarea{
+    display: block;
+    width: 100%;
+    border-radius: 15px;
+    padding: 10px 20px;
+    margin-bottom: 20px;
+    background-color:#f2f5f7;
+    border: 0px;
+    }
+
+#header2{
+    background-color:#f58a07ab ;
+    border-radius: 15px;
+    padding:10px 50px ;
+    width:200px;
+    }
+    .col-8 ul li{
+        list-style: none;
+        
+    }
+    .main-header a{
+        text-decoration: none;
+        color: black;
+    }
+.main-header .container{
+    align-items: center;
+    
+}    
+
+
+#header2 a{
+    color:#f58a07;
+}
+.footer{
+    position: relative;
+    z-index: 1;
+    background-color: #063256;
+    color: white;
+}
+.footer a{
+    color: white;
+    text-decoration: none;
+}
+.btn{background-color: #f58a07;
+    border-radius: 30px;
+    color:white ;
+    
+}
+.main-header .btn{
+    background-color: #f58a0731 !important;
+    border-radius: 30px;
+    border: 0px;
+    color: #f58a07 !important;} 
+
+#Typeemailhere{
+    border-radius: 30px;
+    box-shadow: none;
+    padding: 13px;
+    border: 0px;
+}
+.footer::after{
+    position: absolute;
+    content: "";
+    z-index: 2;
+    background-color: #f58a07ab;
+    width: 50px;
+    height: 140px;
+    right: 0px;
+    bottom: 140px;
+    border-radius: 15px 0 0 15px;
+
+}
+.footer::before{
+    position: absolute;
+    content: "";
+    z-index: 2;
+    background-color: #f58a07ab;
+    width: 50px;
+    height: 100px;
+    bottom: 0px;
+    left: 0px;
+    border-radius: 0px 15px 0 0 ;
+
+}
+.navbar-brand {
+    color: #063256 !important;
+}

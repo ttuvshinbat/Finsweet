@@ -1,0 +1,116 @@
+body{
+    font-family: 'Poppins', sans-serif;
+    font-size: 1rem;
+    
+}
+.main-header a{
+    text-decoration: none;
+    color: black;
+   
+}
+.col-8 ul li{
+    list-style: none;
+    color: black;
+}
+#header2{
+    background-color:#f58a07ab ;
+    border-radius: 15px;
+    padding: 10px 50px ;
+    width:250px;
+    
+
+}
+#header2 a{
+    color:#f58a07;
+}
+.background{
+    background-color:#edf7ff ;
+}
+.background a{
+    text-decoration: none;
+    color: #f58a07;
+}
+
+.background .col-6 img{
+    border-radius: 15px;
+}
+.padding{
+    background-color: #edf7ff;
+}
+
+.card img{
+    border-radius: 15px 15px 0 0;
+}
+.padding{
+    border-radius: 0 0 15px 15px;
+}
+.card{
+    border: 0px;
+}
+.padding a{
+    text-decoration: none;
+    color: #f58a07;
+}
+.background-2{
+    color: white;
+    position: relative;
+    z-index: 1;
+    background-color: #063256;
+}
+.background-2::after{
+    position: absolute;
+    content: "";
+    z-index: 2;
+    background-color: #f58a07;
+    width: 50px;
+    height: 140px;
+    right: 0px;
+    bottom: 100px;
+    border-radius: 15px 0 0 15px;
+
+}
+.background-2::before{
+    position: absolute;
+    content: "";
+    z-index: 2;
+    background-color: #f58a07ab;
+    width: 50px;
+    height: 100px;
+    bottom: 0px;
+    left: 0px;
+    border-radius: 0px 15px 0 0 ;
+
+}
+.background-2 a{
+    color: white;
+    text-decoration: none;
+}
+.background-2 button{
+    background-color: #f58a07;
+    border-radius: 30px;
+    color: white !important;
+
+}
+#email{
+    width: 250px;
+    padding: 10px;
+    border-radius: 30px;
+
+}
+.btn{
+    background-color: #f58a0731;
+    border-radius: 30px;
+    border: 0px;
+    color: #f58a07 !important;
+}
+::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+    color: rgb(145, 139, 139);
+    opacity: 1; /* Firefox */
+    
+  }
+  .navbar-brand {
+    color: #063256 !important;
+}
+  
+  
+

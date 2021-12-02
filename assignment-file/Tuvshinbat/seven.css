@@ -1,0 +1,54 @@
+
+.col-lg-6-image {
+    position: relative;
+    z-index: 1;
+}
+.section img{
+    border-radius: 15px;
+}
+.col-lg-6-image::after{
+    content: "";
+    position: absolute;
+    z-index: 2;
+    background-color: #f58a07ab;
+    width: 20%;
+    height: 100%;
+    left: 0;
+    bottom: 0;
+    border-radius: 15px 0 0 15px;
+
+
+}
+.div-col{
+    background-color: #edf7ff;
+    border-radius: 15px;
+
+    
+
+}
+.section-3{
+    background-color: #edf7ff;
+}
+.section-3 .card{
+    border: 0px;
+    border-radius: 15px;
+    
+}
+.card a{
+    text-decoration: none;
+    color: #f58a07ab;
+}
+.card img{
+    border-radius: 15px 15px 0 0;
+}
+.section-1 a{
+    text-decoration: none;
+    color: #f58a07ab;
+}
+.section-3 .container{
+    margin-top: 40px !important;
+}
+.navbar-brand {
+    color: #063256 !important;
+}
+
