@@ -38,19 +38,136 @@
 // Add CLICK Event Listener on the button
 // Then using Fetch method POST input value to http://52.221.191.153/subscribe/subscription/create 
 let xhr = new XMLHttpRequest();
-xhr.onload = function(){
-console.log(this.responseText)
+xhr.onload = function () {
 
-let data = JSON.parse(xhr.responseText);
-let file =data.data;
-console.log(data)
-document.getElementById('company-1').innerHTML +=`<img class="img1 rounded15" src="./images/post1.png" alt="post1" width="100%" />`;
-document.getElementById("company-1").innerHTML +=` <h3>${file.title}</h3> `  ;
 
-document.getElementById('company-1').innerHTML += `<p>${file.content} </p> `;
-document.getElementById('company-1').innerHTML +=`<a class="decoration shargal" href="Learn more">Learn more &#8594;</a>`
+    let data = JSON.parse(xhr.responseText);
+    let file = data.data;
+    console.log(file[0].title);
 
+
+    for (let i = 0; i < file.length; i++) {
+        document.getElementById('company-1').innerHTML += `<div id="company-2" class="digitalization, col-lg-4 col-md-12">
+<img class="img1 rounded15" src="${file[i].thumbnail}" alt="post2" width="100%" > 
+ <h3>${file[i].title}</h3>
+<p>
+  ${file[i].content.slice(0, 99)}
+</p>
+<a class="decoration shargal" href="learn mores">learn more &#8594;</a>
+</div>`;
+
+
+    }
 }
 
-xhr.open("GET", "./data/company_intro_1.json" )
-xhr.send();
+xhr.open("GET", "./data/company_intro.json")
+xhr.send()
+
+
+let xhr1 = new XMLHttpRequest();
+xhr1.onload = function () {
+    console.log(this.responseText)
+    let data = JSON.parse(xhr1.responseText);
+    let file = data.data;
+
+
+    for (let i = 0; i < file.length; i++) {
+        document.getElementById('ajax-2').innerHTML += `<div class="col-lg-4 col-md-6">
+        <div class="tsagaan-sh" >
+        <img src="${file[i].icon}" alt="icon-layer" />
+         <br>
+         <br>
+        <h3>${file[i].title}</h3>
+        <p>
+            ${file[i].content}
+            </p>
+            </div>
+            </div>
+        `
+    }
+}
+xhr1.open("GET", './data/business_challenge.json');
+xhr1.send();
+
+let xhr2 = new XMLHttpRequest();
+xhr2.onload = function () {
+    console.log(this.responseText)
+    let data = JSON.parse(xhr2.responseText);
+    let file = data.data;
+
+
+    for (i = 0; i < file.length; i++) {
+        document.getElementById('ajax-3').innerHTML +=
+            `<div class="col-lg-4 col-md-12 ">
+            <div class='bg-white' id="back">
+             <div>
+              <div class="dorov">
+               <img class="p-0" src="${file[i].thumbnail}" alt="post1" width="100%" />
+               <div class="gurav p-3">
+                <h3>${file[i].title}</h3>
+                
+                 ${file[i].content.slice(0, 99)}
+                
+              </div>
+            </div>
+          </div>
+          <div class="latest-blog12 p-3 decoration shargal">
+            <a class="decoration shargal" href="www.olloo.mn">Learn more &#8594;</a>
+          </div>
+          </div>
+        </div> `
+    }
+}
+xhr2.open("GET", './data/company_intro_1.json');
+xhr2.send();
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+let nav = document.getElementsByClassName('main-header')[0];
+let head = document.getElementById("headerA");
+
+
+function scrollDetect(event) {
+    let navBar = event.target.scrollingElement.scrollTop;
+    if (navBar > nav.offsetHeight + head.offsetHeight) {
+        nav.classList.add('fixed-top')
+    } else {
+        nav.classList.remove('fixed-top')
+
+    }
+}
+
+window.addEventListener('scroll', scrollDetect)

@@ -4,19 +4,20 @@
         {
             "id": 1, 
             "title": "Invoicing",
-            "icon": "invoicing.icon",
+            "icon": "./images/icon-layer.png",
+            
             "content": "Lorem nc eget mauris in massa blandit lobortis sit am"
         },
         {
             "id": 2, 
             "title": "Support",
-            "icon": "support.icon",
+            "icon": "./images/icon-wizard.png",
             "content": "Lorem nc eget mauris in massa blandit lobortis sit am"
         },
         {
             "id": 3, 
             "title": "Surveying",
-            "icon": "surveying.icon",
+            "icon": "./images/icon-heart.png",
             "content": "Lorem nc eget mauris in massa blandit lobortis sit am"
         }
     ] 

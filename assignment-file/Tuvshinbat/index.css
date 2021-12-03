@@ -172,17 +172,14 @@ body {
     border-radius: 0 0 15px 15px;
    
 }
-.gurav, .dorov{
-    margin: 0px;
-    
-}
+
 
 .latest-blog .col-lg-4{
-    width: calc((100% - 60px) /3);
-    padding: 0px;
+    
+ 
     display: flex;
     justify-content: space-between;
-    margin: 15px;
+   
     
     flex-direction: column;
     border-radius: 15px;
@@ -238,11 +235,7 @@ body {
         border-radius: 0 15px 0 15px;
 
     }
-    .latest-blog .col-lg-4{
-        margin: 0 15px;
-        width: calc((100% - 60px) /3);
-
-    }
+  
     .section .col-lg-4:first-child{
         margin-left: 0px;
         padding-left: 10px;
@@ -257,6 +250,14 @@ body {
     }
     .invoicing:first-child{
         margin-left: 0;
+    }
+
+
+    .main-header{
+        z-index:2;
+    }
+    #back{
+        border-radius: 20px;
     }
     
     
