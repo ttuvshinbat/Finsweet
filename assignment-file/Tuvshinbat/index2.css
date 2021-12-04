@@ -18,6 +18,7 @@
     bottom: 0px;
     border-radius: 15px 0px 0px 15px;
 }
+
 .hoh{
     color: #063256;
 }
@@ -204,3 +205,16 @@
         .footer .btn{
             color: white;
         }
+.colorBlack img{
+    position: relative;
+    z-index: 1;
+    
+
+}     
+.colorBlack img::after{
+    z-index: 2;
+    position: absolute;
+    content: "";
+    background-color:hsla(50%, 50%, 100%, 0.8);
+
+}       
