@@ -123,15 +123,11 @@ xhr2.send();
 
 let xhr3 = new XMLHttpRequest;
 xhr3.onload = function(){
-   
    data = JSON.parse(xhr3.responseText)
    text =data.data
    document.getElementById('company-6').innerHTML += '<h2> All Posts </h2>'
- 
-   let davtalt = function(){
-
-   
-   for(i = 0 ; i < text.length; i++){
+  let davtalt = function(){
+ for(i = 0 ; i < text.length; i++){
 document.getElementById('company-6').innerHTML +=`
 
       <div class="col-md-6 col-lg-4  my-4 ">
@@ -144,10 +140,7 @@ document.getElementById('company-6').innerHTML +=`
           </div>
         </div>
       </div>  
-`
-
-
-   }
+`  }
 }
 davtalt()
 davtalt()
@@ -155,6 +148,29 @@ davtalt()
 }
 xhr3.open('GET', './data/company_intro_1.json')
 xhr3.send()
+
+let xhr4 = new XMLHttpRequest;
+xhr4.onload = function(){
+  data = JSON.parse(xhr.responseText)
+  text=data.data;
+  for(i = 0; i <text.length; i++){
+  document.getElementById('seven').innerHTML +=`
+
+  <div class="col-md-6 col-lg-4  my-4 ">
+    <div class="card">
+      <img src="${text[i].thumbnail}" alt="">
+      <div class="padding p-4">
+        <h3>${text[i].title}</h3>
+       <p>  ${text[i].content.slice(0, 100)} </p>
+        <a href="#">Learn more &#8594;</a>
+      </div>
+    </div>
+  </div>  
+`}
+}
+xhr4.open('GET', './data/company_intro_1.json')
+xhr4.send()
+
 
 let nav = document.getElementsByClassName('main-header')[0];
 let head = document.getElementById("headerA");
@@ -170,4 +186,4 @@ function scrollDetect(event) {
     }
 }
 
-window.addEventListener('scroll', scrollDetect)
+window.addEventListener('scroll', scrollDetect);
