@@ -205,16 +205,9 @@
         .footer .btn{
             color: white;
         }
-.colorBlack img{
-    position: relative;
-    z-index: 1;
-    
-
-}     
-.colorBlack img::after{
-    z-index: 2;
-    position: absolute;
-    content: "";
-    background-color:hsla(50%, 50%, 100%, 0.8);
-
-}       
+.ongoBlack img{
+    filter: grayscale(1);
+}
+.ongoBlack:hover img{
+    filter: grayscale(0);
+}
