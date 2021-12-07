@@ -77,8 +77,8 @@ xhr1.onload = function () {
         <img src="${file[i].icon}" alt="icon-layer" />
          <br>
          <br>
-        <h3>${file[i].title}</h3>
-        <p>
+         <h3>${file[i].title}</h3>
+         <p>
             ${file[i].content}
             </p>
             </div>
@@ -110,8 +110,8 @@ xhr2.onload = function () {
                 
               </div>
             </div>
-          </div>
-          <div class="latest-blog12 p-3 decoration shargal">
+            </div>
+            <div class="latest-blog12 p-3 decoration shargal">
             <a class="decoration shargal" href="www.olloo.mn">Learn more &#8594;</a>
           </div>
           </div>
