@@ -1,0 +1,214 @@
+.one .col-lg-6:first-child{
+    position: relative;
+    z-index: 1;
+    
+
+}
+.one .col-lg-6:first-child img{
+    border-radius: 15px ;
+}
+.one .col-lg-6:first-child::before{
+    position: absolute;
+    z-index: 2;
+    content: "";
+    background-color: hsla(39, 100%, 50%, 0.7);
+    width: 100px;
+    height: 100%;
+    left: 10px;
+    bottom: 0px;
+    border-radius: 15px 0px 0px 15px;
+}
+
+.hoh{
+    color: #063256;
+}
+.color{
+    color:#063256 !important ;
+
+}
+.one a{
+    text-decoration: none;
+    color: white;
+    background-color: #f58a07;
+    border-radius: 30px;
+    padding: 13px;
+
+}
+.two .col-lg-6:first-child img{
+    border-radius: 15px ;
+}
+.two .col-lg-6:first-child{
+    position: relative;
+    z-index: 1;
+    
+
+}
+.two .col-lg-6:first-child::before{
+    position: absolute;
+    z-index: 2;
+    content: "";
+    background-color: hsla(39, 100%, 50%, 0.7);
+    width: 70px;
+    height: 70px;
+    left: -25px;
+    bottom: 175px;
+    border-radius: 15px 15px 15px 15px;
+}
+.three .col-lg-6:first-child{
+    position: relative;
+    z-index: 1;
+    
+
+}
+.three .col-lg-6:first-child img{
+    border-radius: 15px 15px 15px 15px;
+}
+.three .col-lg-6:first-child::before{
+    position: absolute;
+    z-index: 2;
+    content: "";
+    background-color: hsla(39, 100%, 50%, 0.7);
+    width: 70px;
+    height: 70px;
+    left: 92%;
+    bottom: 175px;
+    border-radius: 15px ;
+}
+.four .col-lg-6:first-child{
+    position: relative;
+    z-index: 1;
+    
+
+}
+.four .col-lg-6:first-child img{
+    border-radius: 15px;
+}
+.four .col-lg-6:first-child::before{
+    position: absolute;
+    z-index: 2;
+    content: "";
+    background-color: hsla(39, 100%, 50%, 0.7);
+    width: 70px;
+    height: 70px;
+    left: -25px;
+    bottom: 175px;
+    border-radius: 15px ;
+}
+.five .col-lg-6:first-child{
+    position: relative;
+    z-index: 1;
+    
+
+}
+.five .col-lg-6:first-child img{
+    border-radius: 15px 15px 15px 15px;
+}
+.five .col-lg-6:first-child::before{
+    position: absolute;
+    z-index: 2;
+    content: "";
+    background-color: hsla(39, 100%, 50%, 0.7);
+    width: 70px;
+    height: 70px;
+    left: 92%;
+    bottom: 175px;
+    border-radius: 15px ;
+}
+.six .col-lg-6:first-child{
+    position: relative;
+    z-index: 1;
+    
+
+}
+.six .col-lg-6:first-child img{
+    border-radius: 15px ;
+}
+.six .col-lg-6:first-child::before{
+    position: absolute;
+    z-index: 2;
+    content: "";
+    background-color: hsla(39, 100%, 50%, 0.7);
+    width: 70px;
+    height: 70px;
+    left: -25px;
+    bottom: 175px;
+    border-radius: 15px ;}
+    
+    
+    .seven .col-lg-6:first-child{
+        position: relative;
+        z-index: 1; }
+
+    .seven .col-lg-6:first-child img{
+        border-radius: 15px 15px 15px 15px;
+    }
+    .seven .col-lg-6:first-child::before{
+        position: absolute;
+        z-index: 2;
+        content:url(./images/play-icon.svg);
+        
+       
+        left: 75px;
+        bottom: 45px;
+        border-radius: 15px ;
+        background-color: white;
+        border-radius: 50%;
+        padding: 13px;
+    }
+    .seven .col-lg-6:first-child::after{
+        position: absolute;
+        z-index: 2;
+        content:"Play Video";
+        
+       
+        left: 125px;
+        bottom: 47px;
+        border-radius: 15px ;
+        color: white;
+        padding: 13px;
+    }
+    .latest-blog .col-lg-4 img{
+        border-radius: 15px 15px 0 0;
+        
+        
+        
+
+    }
+    .latest-blog{
+        background-color: #edf7ff;
+        padding-top: 30px;
+        padding-bottom:30px ;
+    }
+    .post-desc{
+        width: auto;
+        background-color: white;
+        border-radius: 0 0 15px 15px;
+        padding: 20px;
+    }
+    .a-and-h3 a{
+        color: #f58a07;
+        text-decoration: none;
+    }
+    .post-desc a{
+        color: #f58a07;
+        text-decoration: none;
+    }
+    .navbar-brand {
+        color: #063256 !important;
+    }
+    .main-header .btn{
+        background-color: #f58a0731 !important;
+        border-radius: 30px;
+        border: 0px;
+        color: #f58a07 !important;} 
+    
+        .footer .btn{
+            color: white;
+        }
+
+        .ongoBlack img{
+            filter: grayscale(1);
+        }
+        .ongoBlack:hover img{
+            filter: grayscale(0);
+        }
