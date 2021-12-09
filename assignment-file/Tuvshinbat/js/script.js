@@ -43,6 +43,38 @@ document.getElementsByClassName('closeBtn')[1].addEventListener('click', () => {
   finsetModal.hide()
 })
 
+const footer = new bootstrap.Modal(document.getElementById('exampleModal'), {
+  backdrop: true,
+  keyboard: false
+})
+const request = document.getElementById("Typeemailhere")
+document.getElementById("huurhun").addEventListener('click', () => {
+  let requestOption = {
+    method: "POST",
+    headers: {
+      'Content-type': 'application/json',
+    },
+    body: JSON.stringify({
+      "email": `${request.value}`
+
+    })
+  }
+  
+
+  fetch('http://52.221.191.153/subscribe/subscription/create', requestOption)
+    .then(response =>
+      response.json()
+    ).then(data => console.log(data.message))
+
+    footer.show()
+    document.getElementsByClassName("modal-body")[1].innerHTML = `${data.message}`
+  }
+)
+
+
+
+
+
 
 /*  Add subscription email action. When subscription POST request is successful, 
     change the email element and subscribe button into "Your subscription is successful" Text. 
@@ -204,28 +236,3 @@ function scrollDetect(event) {
 }
 
 window.addEventListener('scroll', scrollDetect);
-
-const request = document.getElementById("Typeemailhere")
-
-document.getElementById("huurhun").addEventListener('click', () => {
-  let requestOption = {
-    method: "POST",
-    headers: {
-      'Content-type': 'application/json',
-    },
-    body: JSON.stringify({
-      "email": `${request.value}`
-
-    })
-  }
-  
-
-  fetch('http://52.221.191.153/subscribe/subscription/create', requestOption)
-    .then(response =>
-      response.json()
-    ).then(data => console.log(data.message))
-    alert("subscribed")
-  }
-
-)
-
