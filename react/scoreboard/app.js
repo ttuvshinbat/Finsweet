@@ -1,127 +1,96 @@
-// const title = React.createElement (
-//     "h1",
-//     { id: "main-title" },
-//     "my first react element",
+const players = [
+{id : "human1", name: "angarag",
+score:"70"},
+{id : "human2", name: "baynaa",
+score:"65"},
+{id : "human3", name: "tuvshee",
+score:"99"},
+{id : "human4", name: "tsedvee",
+score:"92" },
+{id : "human5", name: "temuulen",
+score:"79"},
+{id : "human6", name: "temka",
+score:"75"},
+{id : "human7", name: "UUGANAA",
+score:"90"},
+{id : "human8", name: "ZULAA",
+score:"75"},
+{id : "human9", name: "BAATARAA",
+score:"75"}
+]
 
-// )
-// const element = <h2>bolhonuu harii daa</h2>
-// const desc = React.createElement (
-//     "p",
-//     null,
-//     "second item null gej ogloo"
-// )
-// let brown = <p> brown ni bor ym aa</p>
-// let white = <p> brown is tsagaan</p>
-// const header = React.createElement(
-//     'header',
-//     null,
-//     "tiimdee",
-//     title,
-//     desc,
-//     element
+class Header extends React.Component{
+    render(){
+        return(
+           <header>
+               <h1> Scoreboard</h1>
+              <div> player: {this.props.activePlayer.length}</div>
 
-// )
-// ReactDOM.render(
-  
-//     header,
-//     document.getElementById('root')
-// )
-// ReactDOM.render(
-  
-//     brown,
-//     document.getElementById('root')
-// )
-// const section = React.createElement(
-//     <header>
-//         <h1>{brown}</h1>
-//         <p>{white}</p>
-//     </header>
- 
-//  )
+          
+           </header>
 
-//  ReactDOM.render(
-  
-//     section,
-//     document.getElementById('coll')
-// ),
-
-
-// const an =" this is my first react"
-// const myTitled = 'my-titled'
-// const userName = 'Tuvshinbat'
-// const  Headers =() =>  {
-// return(
-//     <header>
-//         <h1 id={myTitled}>{userName} first React app</h1>
-//         <span className = "stats"></span>
-//         <p></p>
-
-//     </header>
-// )
-// }
-
-// ReactDOM.render(
-//     <Headers> </Headers>,
-//     document.getElementById("root")
-
-// )
-const Header = () =>{
-    return(
-        <header>
-            <h1>scoreboard</h1>
-            <span className="stats">Player : 1</span>
-        </header>
-    )
+        )
+    }
 }
-const Counter = () => {
-    return( <div className="counter">
-    <button className=" counter-action decrement">-</button>
-    <span className="counter-score" >35</span>
-    <button className=" counter-action decrement">+</button>
-    
-</div>
+
+
+class Counter extends React.Component{
+    state = {
+        score:0
+    };
+    decrementscore = () =>{
+        this.setState(prevState =>({
+            score: prevState.score -1
+        }))
+    }
+    incrementscore = () =>{
+        this.setState(prevState =>({
+            score: prevState.score +1
+        })
+
+        )
+    }
+    render(){
         
-    )
+        
+        return(
+            <div className="counter" >
+            <button className="counter-action decrement" onClick={this.decrementscore}>  -</button>
+            <span className="counter-score" >{this.state.score}</span>
+            <button className="counter-action increment" onClick={this,this.incrementscore} >  +</button>
+            </div>
+
+        )
+    }
 }
-const Player = () => {
-    return(
+
+class Player extends React.Component{
+    render(){
+        return(
         <div className="player">
-            <span className="player-name">
-                Tuvshinbat
-         </span>
-        <Counter/>
+            <div className="player-name">{this.props.ner}</div>
+             <div className="stats"></div>
+           <Counter score={this.props.score}/>
         </div>
-    )
+        )
+    }
 }
-// ene shees hereggui boslon
-// ReactDOM.render(
-//     <Player></Player>,
-//     document.getElementById('root')
-// )
 
+class App extends React.Component{
+    render(){
+        return(
+            
+            <div className="scoreboard">
 
+             <Header activePlayer ={this.props.initialPlayer}/>  
+             {this.props.initialPlayer.map(players => <Player ner={players.name} />
 
-const App = () =>
-{
-    return(
-        <div className = "scoreboard">
-          <Header/>
-          <Player/>
-
-        </div>
-
-    )
+             
+             )}
+            </div>
+        )
+    }
 }
 ReactDOM.render(
-    <App/>,
-    document.getElementById('root')
+    <App initialPlayer ={players}/>, document.getElementById("root")
 )
-
-
-
-
-
-
-
-
-

@@ -187,3 +187,15 @@ function scrollDetect(event) {
 }
 
 window.addEventListener('scroll', scrollDetect);
+
+const finsetModal = new bootstrap.Modal(document.getElementById('exampleModalToggle'), () =>{
+  finsetModal.show()
+  
+  document.getElementById('exampleModalToggle').style.display ="none";
+
+} )
+ console.log(finsetModal)
+fetch('http://52.221.191.153/subscribe/subscription/create')
+.then((response) =>{
+  return response.json()
+} )

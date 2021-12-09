@@ -191,12 +191,14 @@ window.addEventListener('scroll', scrollDetect);
 
 
 // video play hamaatai gej bodson bolovch unendee mq ym
-// const finsetModal = new bootstrap.Modal(document.getElementById('exampleModalToggle'), () =>{
-//   finsetModal.show()
+const finsetModal = new bootstrap.Modal(document.getElementById('exampleModalToggle'), () =>{
+  finsetModal.show()
   
-//   document.getElementById('exampleModalToggle').style.display ="none";
+  document.getElementById('exampleModalToggle').style.display ="none";
 
-// } )
+} )
+
+
 
 // console.log(finsetModal)
 fetch('http://52.221.191.153/subscribe/subscription/create')
