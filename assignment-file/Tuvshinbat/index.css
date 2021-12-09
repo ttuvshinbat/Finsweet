@@ -33,7 +33,9 @@ body {
     background-color: white;
 }
 
-
+.radius{
+    border-radius: 20px;
+}
 .black{
     color: black;
 }
@@ -143,28 +145,7 @@ body {
         position: relative;
         z-index: 1;
     }
-.play::before{
-    z-index: 2;
-    position: absolute;
-    content: url(./images/play-icon.svg);
-    left: 30px;
-    bottom: 50px;
-    background-color: white;
-    width: 50px;
-    height: 50px;
-    padding: 13px;
-    border-radius: 50%;
-}
-.play::after{
-    
-    position: absolute;
-    content: "Play Video";
-    z-index: 2;
-    left: 120px;
-    bottom: 65px;
-    color: white;
 
-}
 .latest-blog img{
     border-radius: 15px 15px 0 0;
 }
@@ -260,6 +241,13 @@ body {
         border-radius: 20px;
     }
     
+    #bairlal{
+        left: 20px;
+    top: 75%;
+    }
+    .booronhii{
+        border-radius: 50px;
+    }
     
         
         
