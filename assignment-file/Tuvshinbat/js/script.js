@@ -92,19 +92,30 @@ xhr.onload = function () {
   let file = data.data;
   
 
-
   for (let i = 0; i < file.length; i++) {
     document.getElementById('company-1').innerHTML += `<div id="company-2" class="digitalization, col-lg-4 col-md-12">
 <img class="img1 rounded15" src="${file[i].thumbnail}" alt="post2" width="100%" > 
  <h3>${file[i].title}</h3>
-<p>
+<p class="sliceOff">
   ${file[i].content.slice(0, 99)}
 </p>
-<a class="decoration shargal" href="learn mores">learn more &#8594;</a>
+<button class="decoration shargal temee " href="learn mores">learn more &#8594;</button>
 </div>`;
 
 
   }
+  for (let i =0;i < file.length; i++){
+    
+  document.getElementsByClassName("temee")[i].addEventListener("click", ()=>{
+    document.getElementsByClassName("sliceOff")[i].innerHTML =
+    file[i].content
+  
+    
+    
+ 
+ 
+  })
+}
 }
 
 xhr.open("GET", "./data/company_intro.json")
@@ -143,26 +154,29 @@ xhr2.onload = function () {
   let file = data.data;
 
 
-  for (i = 0; i <= file.length; i++) {
+  for (i = 0; i < file.length; i++) {
     document.getElementById('ajax-3').innerHTML +=
       `<div class="col-lg-4 col-md-12 ">
             <div class='bg-white' id="back">
              <div>
               <div class="dorov">
-               <img class="p-0" src="${file[i].thumbnail}" alt="post1" width="100%" />
-               <div class="gurav p-3">
-                <h3>${file[i].title}</h3>
-                
-                 ${file[i].content.slice(0, 99)}
-                
-              </div>
-            </div>
+                <img class="p-0" src="${file[i].thumbnail}" alt="post1" width="100%" />
+                <div class="gurav p-3">
+                 <h3>${file[i].title}</h3>
+                 <p class="sliceOff2">  ${file[i].content.slice(0, 100)} </p>
+                </div>
+             </div>
             </div>
             <div class="latest-blog12 p-3 decoration shargal">
-            <a class="decoration shargal" href="www.olloo.mn">Learn more &#8594;</a>
+            <button class="decoration shargal buttonOff" href="www.olloo.mn">Learn more &#8594;</button>
           </div>
           </div>
         </div> `
+  }
+  for ( let i = 0; i < file.length; i++) {
+    document.getElementsByClassName("buttonOff")[i].addEventListener("click", ()=> {
+document.getElementsByClassName("sliceOff2")[i].innerHTML = file[i].content
+    })
   }
 }
 xhr2.open("GET", './data/company_intro_1.json');
@@ -172,7 +186,8 @@ let xhr3 = new XMLHttpRequest;
 xhr3.onload = function () {
   data = JSON.parse(xhr3.responseText)
   text = data.data
-  document.getElementById('company-6').innerHTML += '<h2> All Posts </h2>'
+  console.log(text)
+  // document.getElementById('company-6').innerHTML += '<h2> All Posts </h2>'
   let davtalt = function () {
     for (i = 0; i < text.length; i++) {
       document.getElementById('company-6').innerHTML += `
