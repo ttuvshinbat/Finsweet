@@ -28,48 +28,7 @@
 // Send the request
 
 
-const finsetModal = new bootstrap.Modal(document.getElementById('tuvshuuModal'), {
-  backdrop: true,
-  keyboard: false
-})
-document.getElementById('bairlal').addEventListener('click', () => {
-  finsetModal.show()
-})
-document.getElementsByClassName("modal-body")[0].innerHTML = `<iframe width="450" height="315" src="https://www.youtube.com/embed/v3xwCkhmies" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>`
-document.getElementsByClassName('closeBtn')[0].addEventListener('click', () => {
-  finsetModal.hide()
-})
-document.getElementsByClassName('closeBtn')[1].addEventListener('click', () => {
-  finsetModal.hide()
-})
 
-const footer = new bootstrap.Modal(document.getElementById('footer'), {
-  backdrop: true,
-  keyboard: true
-})
-const request = document.getElementById("Typeemailhere")
-document.getElementById("huurhun").addEventListener('click', () => {
-  let requestOption = {
-    method: "POST",
-    headers: {
-      'Content-type': 'application/json',
-    },
-    body: JSON.stringify({
-      "email": `${request.value}`
-
-    })
-  }
-  
-  
-  footer.show()
-  
-  fetch('http://52.221.191.153/subscribe/subscription/create', requestOption)
-  .then(response =>
-    response.json()
-    ).then(data => document.getElementsByClassName("modal-body")[1].innerHTML = `${data.message}`)
-    
-  }
-)
 
 
 
@@ -121,6 +80,38 @@ xhr.onload = function () {
 xhr.open("GET", "./data/company_intro.json")
 xhr.send()
 
+
+let xhr3 = new XMLHttpRequest;
+xhr3.open('GET', './data/company_intro_1.json')
+xhr3.onload = function () {
+  data = JSON.parse(xhr3.responseText)
+  text = data.data
+  console.log(text)
+  document.getElementById('company-6').innerHTML += '<h2> All Posts </h2>'
+  let davtalt = function () {
+    for (i = 0; i < text.length; i++) {
+      console.log(document.getElementById('company-6'))
+      document.getElementById('company-6').innerHTML += `
+
+      <div class="col-md-6 col-lg-4  my-4 ">
+        <div class="card">
+          <img src="${text[i].thumbnail}" alt="">
+          <div class="padding p-4">
+            <h3>${text[i].title}</h3>
+           <p>  ${text[i].content.slice(0, 100)} </p>
+            <a href="#">Learn more &#8594;</a>
+          </div>
+        </div>
+      </div>  
+`
+    }
+  }
+  davtalt()
+  davtalt()
+
+
+}
+xhr3.send()
 
 let xhr1 = new XMLHttpRequest();
 xhr1.onload = function () {
@@ -180,37 +171,9 @@ document.getElementsByClassName("sliceOff2")[i].innerHTML = file[i].content
   }
 }
 xhr2.open("GET", './data/company_intro_1.json');
+
 xhr2.send();
 
-let xhr3 = new XMLHttpRequest;
-xhr3.onload = function () {
-  data = JSON.parse(xhr3.responseText)
-  text = data.data
-  console.log(text)
-  // document.getElementById('company-6').innerHTML += '<h2> All Posts </h2>'
-  let davtalt = function () {
-    for (i = 0; i < text.length; i++) {
-      document.getElementById('company-6').innerHTML += `
-
-      <div class="col-md-6 col-lg-4  my-4 ">
-        <div class="card">
-          <img src="${text[i].thumbnail}" alt="">
-          <div class="padding p-4">
-            <h3>${text[i].title}</h3>
-           <p>  ${text[i].content.slice(0, 100)} </p>
-            <a href="#">Learn more &#8594;</a>
-          </div>
-        </div>
-      </div>  
-`
-    }
-  }
-  davtalt()
-  davtalt()
-
-}
-xhr3.open('GET', './data/company_intro_1.json')
-xhr3.send()
 
 let xhr4 = new XMLHttpRequest;
 xhr4.onload = function () {
@@ -251,3 +214,46 @@ function scrollDetect(event) {
 }
 
 window.addEventListener('scroll', scrollDetect);
+
+const finsetModal = new bootstrap.Modal(document.getElementById('tuvshuuModal'), {
+  backdrop: true,
+  keyboard: false
+})
+document.getElementById('bairlal').addEventListener('click', () => {
+  finsetModal.show()
+})
+document.getElementsByClassName("modal-body")[0].innerHTML = `<iframe width="450" height="315" src="https://www.youtube.com/embed/v3xwCkhmies" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>`
+document.getElementsByClassName('closeBtn')[0].addEventListener('click', () => {
+  finsetModal.hide()
+})
+document.getElementsByClassName('closeBtn')[1].addEventListener('click', () => {
+  finsetModal.hide()
+})
+
+const footer = new bootstrap.Modal(document.getElementById('footer'), {
+  backdrop: true,
+  keyboard: true
+})
+const request = document.getElementById("Typeemailhere")
+document.getElementById("huurhun").addEventListener('click', () => {
+  let requestOption = {
+    method: "POST",
+    headers: {
+      'Content-type': 'application/json',
+    },
+    body: JSON.stringify({
+      "email": `${request.value}`
+
+    })
+  }
+  
+  
+  footer.show()
+  
+  fetch('http://52.221.191.153/subscribe/subscription/create', requestOption)
+  .then(response =>
+    response.json()
+    ).then(data => document.getElementsByClassName("modal-body")[1].innerHTML = `${data.message}`)
+    
+  }
+)
