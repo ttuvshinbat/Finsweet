@@ -211,3 +211,8 @@
 .ongoBlack:hover img{
     filter: grayscale(0);
 }
+.shargal{
+    color:#f58a07 ;
+    border: 0px;
+    background-color: white;
+}

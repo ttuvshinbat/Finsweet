@@ -66,6 +66,7 @@ xhr.onload = function () {
   for (let i =0;i < file.length; i++){
     
   document.getElementsByClassName("temee")[i].addEventListener("click", ()=>{
+    
     document.getElementsByClassName("sliceOff")[i].innerHTML =
     file[i].content
   
@@ -82,13 +83,13 @@ xhr.send()
 
 
 let xhr3 = new XMLHttpRequest;
-xhr3.open('GET', './data/company_intro_1.json')
+xhr3.open('GET', './data/posts.json')
 xhr3.onload = function () {
   data = JSON.parse(xhr3.responseText)
   text = data.data
   console.log(text)
   document.getElementById('company-6').innerHTML += '<h2> All Posts </h2>'
-  let davtalt = function () {
+  
     for (i = 0; i < text.length; i++) {
       console.log(document.getElementById('company-6'))
       document.getElementById('company-6').innerHTML += `
@@ -98,16 +99,22 @@ xhr3.onload = function () {
           <img src="${text[i].thumbnail}" alt="">
           <div class="padding p-4">
             <h3>${text[i].title}</h3>
-           <p>  ${text[i].content.slice(0, 100)} </p>
-            <a href="#">Learn more &#8594;</a>
+           <p class="sliceOff2">  ${text[i].content.slice(0, 100)} </p>
+            <button class="decoration shargal " >Learn more &#8594;</button>
           </div>
         </div>
       </div>  
 `
     }
-  }
-  davtalt()
-  davtalt()
+    for (let i =0;i < text.length; i++){
+    
+      document.getElementsByClassName("shargal")[i].addEventListener("click", ()=>{
+        
+        document.getElementsByClassName("sliceOff2")[i].innerHTML =
+        text[i].content
+       })
+    }
+
 
 
 }
@@ -187,12 +194,25 @@ xhr4.onload = function () {
       <img src="${text[i].thumbnail}" alt="">
       <div class="padding p-4">
         <h3>${text[i].title}</h3>
-       <p>  ${text[i].content.slice(0, 100)} </p>
-        <a href="#">Learn more &#8594;</a>
+       <p class="sliceOff">  ${text[i].content.slice(0, 100)} </p>
+        <button class="shargal buttonOff">Learn more &#8594;</button>
       </div>
     </div>
   </div>  
 `
+  }
+  for (let i =0; i < text.length; i++){
+    
+    document.getElementsByClassName("buttonOff")[i].addEventListener("click", ()=>{
+      
+      document.getElementsByClassName("sliceOff")[i].innerHTML =
+      text[i].content
+    
+      
+      
+   
+   
+    })
   }
 }
 xhr4.open('GET', './data/company_intro_1.json')
