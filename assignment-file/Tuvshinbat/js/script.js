@@ -43,9 +43,9 @@ document.getElementsByClassName('closeBtn')[1].addEventListener('click', () => {
   finsetModal.hide()
 })
 
-const footer = new bootstrap.Modal(document.getElementById('exampleModal'), {
+const footer = new bootstrap.Modal(document.getElementById('footer'), {
   backdrop: true,
-  keyboard: false
+  keyboard: true
 })
 const request = document.getElementById("Typeemailhere")
 document.getElementById("huurhun").addEventListener('click', () => {
@@ -60,14 +60,14 @@ document.getElementById("huurhun").addEventListener('click', () => {
     })
   }
   
-
+  
+  footer.show()
+  
   fetch('http://52.221.191.153/subscribe/subscription/create', requestOption)
-    .then(response =>
-      response.json()
-    ).then(data => console.log(data.message))
-
-    footer.show()
-    document.getElementsByClassName("modal-body")[1].innerHTML = `${data.message}`
+  .then(response =>
+    response.json()
+    ).then(data => document.getElementsByClassName("modal-body")[1].innerHTML = `${data.message}`)
+    
   }
 )
 
