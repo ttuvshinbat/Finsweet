@@ -198,4 +198,11 @@ justify-content: space-between;
              justify-content: auto;
              align-items: center;
          }
+         .radius{
+            border-radius: 20px;
+        }
+        .bgshargal1{
+            background-color: #f58a07;
+        
+        }
         

@@ -26,7 +26,32 @@
 // Create a callback function
 // Open a GET request and use data from ../data/company_intro.json
 // Send the request
+const footer = new bootstrap.Modal(document.getElementById('footer'), {
+  backdrop: true,
+  keyboard: true
+})
+const request = document.getElementById("Typeemailhere")
+document.getElementById("huurhun").addEventListener('click', () => {
+  let requestOption = {
+    method: "POST",
+    headers: {
+      'Content-type': 'application/json',
+    },
+    body: JSON.stringify({
+      "email": `${request.value}`
 
+    })
+  }
+
+
+  footer.show()
+
+  fetch('http://52.221.191.153/subscribe/subscription/create', requestOption)
+    .then(response =>
+      response.json()
+    ).then(data => document.getElementsByClassName("modal-body")[1].innerHTML = `${data.message}`)
+
+})
 
 
 
@@ -49,12 +74,12 @@ xhr.onload = function () {
 
   let data = JSON.parse(xhr.responseText);
   let file = data.data;
-  
+
 
   for (let i = 0; i < file.length; i++) {
     document.getElementById('company-1').innerHTML += `<div id="company-2" class="digitalization, col-lg-4 col-md-12">
 <img class="img1 rounded15" src="${file[i].thumbnail}" alt="post2" width="100%" > 
- <h3>${file[i].title}</h3>
+ <h3>${file[i].title} </h3>
 <p class="sliceOff">
   ${file[i].content.slice(0, 99)}
 </p>
@@ -63,19 +88,19 @@ xhr.onload = function () {
 
 
   }
-  for (let i =0;i < file.length; i++){
-    
-  document.getElementsByClassName("temee")[i].addEventListener("click", ()=>{
-    
-    document.getElementsByClassName("sliceOff")[i].innerHTML =
-    file[i].content
-  
-    
-    
- 
- 
-  })
-}
+  for (let i = 0; i < file.length; i++) {
+
+    document.getElementsByClassName("temee")[i].addEventListener("click", () => {
+
+      document.getElementsByClassName("sliceOff")[i].innerHTML =
+        file[i].content
+
+
+
+
+
+    })
+  }
 }
 
 xhr.open("GET", "./data/company_intro.json")
@@ -89,10 +114,10 @@ xhr3.onload = function () {
   text = data.data
   console.log(text)
   document.getElementById('company-6').innerHTML += '<h2> All Posts </h2>'
-  
-    for (i = 0; i < text.length; i++) {
-      console.log(document.getElementById('company-6'))
-      document.getElementById('company-6').innerHTML += `
+
+  for (i = 0; i < text.length; i++) {
+    console.log(document.getElementById('company-6'))
+    document.getElementById('company-6').innerHTML += `
 
       <div class="col-md-6 col-lg-4  my-4 ">
         <div class="card">
@@ -105,15 +130,15 @@ xhr3.onload = function () {
         </div>
       </div>  
 `
-    }
-    for (let i =0;i < text.length; i++){
-    
-      document.getElementsByClassName("shargal")[i].addEventListener("click", ()=>{
-        
-        document.getElementsByClassName("sliceOff2")[i].innerHTML =
+  }
+  for (let i = 0; i < text.length; i++) {
+
+    document.getElementsByClassName("shargal")[i].addEventListener("click", () => {
+
+      document.getElementsByClassName("sliceOff2")[i].innerHTML =
         text[i].content
-       })
-    }
+    })
+  }
 
 
 
@@ -122,7 +147,7 @@ xhr3.send()
 
 let xhr1 = new XMLHttpRequest();
 xhr1.onload = function () {
-  
+
   let data = JSON.parse(xhr1.responseText);
   let file = data.data;
 
@@ -147,7 +172,7 @@ xhr1.send();
 
 let xhr2 = new XMLHttpRequest();
 xhr2.onload = function () {
-  
+
   let data = JSON.parse(xhr2.responseText);
   let file = data.data;
 
@@ -171,9 +196,9 @@ xhr2.onload = function () {
           </div>
         </div> `
   }
-  for ( let i = 0; i < file.length; i++) {
-    document.getElementsByClassName("buttonOff")[i].addEventListener("click", ()=> {
-document.getElementsByClassName("sliceOff2")[i].innerHTML = file[i].content
+  for (let i = 0; i < file.length; i++) {
+    document.getElementsByClassName("buttonOff")[i].addEventListener("click", () => {
+      document.getElementsByClassName("sliceOff2")[i].innerHTML = file[i].content
     })
   }
 }
@@ -193,7 +218,7 @@ xhr4.onload = function () {
     <div class="card">
       <img src="${text[i].thumbnail}" alt="">
       <div class="padding p-4">
-        <h3>${text[i].title}</h3>
+        <h3>${text[i].title} </h3>
        <p class="sliceOff">  ${text[i].content.slice(0, 100)} </p>
         <button class="shargal buttonOff">Learn more &#8594;</button>
       </div>
@@ -201,17 +226,17 @@ xhr4.onload = function () {
   </div>  
 `
   }
-  for (let i =0; i < text.length; i++){
-    
-    document.getElementsByClassName("buttonOff")[i].addEventListener("click", ()=>{
-      
+  for (let i = 0; i < text.length; i++) {
+
+    document.getElementsByClassName("buttonOff")[i].addEventListener("click", () => {
+
       document.getElementsByClassName("sliceOff")[i].innerHTML =
-      text[i].content
-    
-      
-      
-   
-   
+        text[i].content
+
+
+
+
+
     })
   }
 }
@@ -250,30 +275,3 @@ document.getElementsByClassName('closeBtn')[1].addEventListener('click', () => {
   finsetModal.hide()
 })
 
-const footer = new bootstrap.Modal(document.getElementById('footer'), {
-  backdrop: true,
-  keyboard: true
-})
-const request = document.getElementById("Typeemailhere")
-document.getElementById("huurhun").addEventListener('click', () => {
-  let requestOption = {
-    method: "POST",
-    headers: {
-      'Content-type': 'application/json',
-    },
-    body: JSON.stringify({
-      "email": `${request.value}`
-
-    })
-  }
-  
-  
-  footer.show()
-  
-  fetch('http://52.221.191.153/subscribe/subscription/create', requestOption)
-  .then(response =>
-    response.json()
-    ).then(data => document.getElementsByClassName("modal-body")[1].innerHTML = `${data.message}`)
-    
-  }
-)

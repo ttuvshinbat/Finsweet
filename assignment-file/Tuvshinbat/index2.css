@@ -135,7 +135,7 @@
     border-radius: 15px ;}
     
     
-    .seven .col-lg-6:first-child{
+    /* .seven .col-lg-6:first-child{
         position: relative;
         z-index: 1; }
 
@@ -166,7 +166,15 @@
         border-radius: 15px ;
         color: white;
         padding: 13px;
+    } */
+    #bairlal{
+        left: 20px;
+    top: 75%;
     }
+    .booronhii{
+        border-radius: 50px;
+    }
+    
     .latest-blog .col-lg-4 img{
         border-radius: 15px 15px 0 0;
         
@@ -211,8 +219,10 @@
 .ongoBlack:hover img{
     filter: grayscale(0);
 }
-.shargal{
-    color:#f58a07 ;
-    border: 0px;
-    background-color: white;
+.radius{
+    border-radius: 20px;
+}
+.bgshargal1{
+    background-color: #f58a07;
+
 }
