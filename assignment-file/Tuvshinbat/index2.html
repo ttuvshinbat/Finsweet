@@ -179,7 +179,13 @@
         <div class="container px-0 ongoBlack my-5">
             <div class="row">
                 <div class="col-lg-6 col-md-12 order-lg-1">
-                    <img class="img-fluid" src="./images/services/7.png" alt="" width="600px">
+                    <div class="col-lg-6 col-md-12 p-0 play position-relative z-index-1">
+                        <img class="" src="./images/video-image.png" alt="videoo"  />
+                        <div class=" position-absolute z-index-2 text-white " id="bairlal">
+                          <img class="bg-white p-3 booronhii me-2" src="./images/play-icon.svg" alt="">
+                          Play video
+                        </div>
+                      </div>
                 </div>
                 <div class="col-lg-6 col-md-12">
                     <div class="arai">
@@ -213,7 +219,7 @@
 
 
                 <div class="col-lg-4 col-md-6 col-sm-12 mb-5">
-                    <img src="./img/post1.png" alt="" width="100%">
+                    <img src="./images/post1.png" alt="" width="100%">
                     <div class="post-desc">
                         <div class="post-text">
                             <h3>Our internal process and longerm vision</h3>
@@ -227,7 +233,7 @@
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-6 col-sm-12 mb-5">
-                    <img src="./img/post-2.png" alt="" width="100%">
+                    <img src="./images/post-2.png" alt="" width="100%">
                     <div class="post-desc">
                         <div class="post-text">
                             <h3>helping thw nest generation of leaders</h3>
@@ -241,7 +247,7 @@
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-6 col-sm-12 mb-5">
-                    <img src="./img/post-3.png" alt="" width="100%">
+                    <img src="./images/post-3.png" alt="" width="100%">
                     <div class="post-desc">
                         <div class="post-text">
                             <h3>Our internal process and longerm vision</h3>
@@ -306,12 +312,12 @@
                     <br>
                     <br>
 
-                    <input type="text" id="Typeemailhere" name="Typeemailhere" placeholder="Type email here">
+                    <input type="text" id="Typeemailhere" class="mb-3" name="Typeemailhere" placeholder="Type email here" />
                     <br>
 
                     <br>
                     <br>
-                    <button type="button" class="btn  btn-lg ">Subscribe</button>
+                    <input type="button" id="huurhun" class="border border-0 px-3 py-2  bgshargal1 text-white radius" data-bs-toggle="modal" value="Subscribe">
                     <div>
                         <br>
                         <br>
@@ -328,8 +334,37 @@
 
         </div>
     </div>
-
-    <script src="./js/script.js"></script>
+   
+    <div class="modal fade" id="tuvshuuModal">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title">Goy Duu</h5>
+              <button type="button" class="btn-close closeBtn"></button>
+            </div>
+            <div class="modal-body">
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn closeBtn">Close</button>
+             
+              </div>
+          </div>
+        </div>
+      </div> <div class="modal fade" id="footer">
+        <div class="modal-dialog modal-dialog-centered">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" >Modal title</h5>
+            </div>
+            <div class="modal-body">
+            </div>
+      
+          </div>
+        </div>
+      </div>
+      
+     <script src="./js/script.js"></script>
+    <!-- <script src="./java.js"></script> -->
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"
         integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous">
     </script>

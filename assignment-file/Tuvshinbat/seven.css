@@ -51,4 +51,16 @@
 .navbar-brand {
     color: #063256 !important;
 }
+.shargal{
+    color:#f58a07 ;
+    border: 0px;
+    background-color: white;
+}
+.radius{
+    border-radius: 20px;
+}
+.bgshargal1{
+    background-color: #f58a07;
+
+}
 

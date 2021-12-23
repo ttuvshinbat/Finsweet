@@ -27,16 +27,17 @@ body {
 .listyle{
     list-style: none;
 }
-.bgshargal1{
-    background-color: #f58a07;
 
-}
 .bg-white{
     background-color: white;
 }
 
 .radius{
     border-radius: 20px;
+}
+.bgshargal1{
+    background-color: #f58a07;
+
 }
 .black{
     color: black;
